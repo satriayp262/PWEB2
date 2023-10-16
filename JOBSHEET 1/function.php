@@ -13,18 +13,22 @@
         <input type="submit" name="submit" value="Submit">
     </form>
     <?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
-    $l = (int)$_POST["lebar"];
-    $p = (int)$_POST["panjang"];
-    $r = (int)$_POST["jari"];
+    $p=0;
+    $l=0;
+    $r=0;
+    if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
+        $l = (int)$_POST["lebar"];
+        $p = (int)$_POST["panjang"];
+        $r = (int)$_POST["jari"];
     }
+
     function luasPersegi($p, $l){
         return $p * $l;
     }
     function luasLingkaran($r){
         return  3.14 * $r * $r;
     }
+    
     echo "Luas Persegi = ",luasPersegi($p, $l);
     echo "</br>";
     echo "Luas Lingkaran = ",luasLingkaran($r);
