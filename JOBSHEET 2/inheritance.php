@@ -38,6 +38,6 @@ $informatika->panggil_mahasiswa("Pangrangau");
 $informatika->setNim("220302093");
 
 //menampilkan isi property
-echo "Nama depan saya: " . $informatika->nama_saya . "<br/>";
-echo "Nama belakang saya: " . $informatika->nama_mahasiswa . "<br/>";
-echo "NIM saya: " . $informatika->getNim();
+echo "Nama depan saya : " . $informatika->nama_saya . "<br/>";
+echo "Nama belakang saya : " . $informatika->nama_mahasiswa . "<br/>";
+echo "NIM saya : " . $informatika->getNim();
