@@ -7,9 +7,9 @@
 </head>
 <body>
     <form method="post" action="">
-        Masukan Panjang persegi : <input type="number" name="panjang"><br>
-        Masukan Lebar persegi : <input type="number" name="lebar"><br>
-        Masukan Jari-Jari lingkaran : <input type="number" name="jari"><br>
+        Masukan Panjang persegi : <input type="text" name="panjang"><br><br>
+        Masukan Lebar persegi : <input type="text" name="lebar"><br><br>
+        Masukan Jari-Jari lingkaran : <input type="text" name="jari"><br>
         <input type="submit" name="submit" value="Submit">
     </form>
     <?php
@@ -28,7 +28,7 @@
     function luasLingkaran($r){
         return  3.14 * $r * $r;
     }
-    
+
     echo "Luas Persegi = ",luasPersegi($p, $l);
     echo "</br>";
     echo "Luas Lingkaran = ",luasLingkaran($r);
