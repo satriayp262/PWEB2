@@ -1,37 +1,43 @@
 <?php
 
-class Manusia { 
+class Manusia {
     public $nama_saya;
     private $nim_saya;
 
     public function panggil_nama($saya){
         $this->nama_saya = $saya;
     }
-    function panggil_nim($nim){
+    public function setNim($nim) {
         $this->nim_saya = $nim;
+    }
+    public function getNim() {
+        return $this->nim_saya;
     }
 }
 
-// Class turunan dari Manusia
-class Mahasiswa extends Manusia { 
+//class turunan dari class manusia
+class Mahasiswa extends Manusia {
     public $nama_mahasiswa;
 
     function panggil_mahasiswa($mahasiswa) {
         $this->nama_mahasiswa = $mahasiswa;
     }
-    function panggil_nim($nim) { 
-        $this->nim_saya = $nim; 
+    function setNim($nim) { 
+        parent::setNim($nim); 
+    }
+    function getNim() { 
+        return parent::getNim();
     }
 }
 
-// Instansiasi class Mahasiswa
-$informatika = new Mahasiswa(); 
+//instansiasi class mahasiswa
+$informatika = new Mahasiswa();
 
-$informatika->panggil_nama("Satria Yudha"); 
+$informatika->panggil_nama("Satria Yudha");
 $informatika->panggil_mahasiswa("Pangrangau");
-$informatika->panggil_nim("220302093");
+$informatika->setNim("220302093");
 
-// Menampilkan isi property
-echo "Nama depan saya : " . $informatika->nama_saya . "<br/>"; 
-echo "Nama belakang saya : " . $informatika->nama_mahasiswa . "<br/>";
-echo "NIM saya : " . $informatika->nim_saya;
+//menampilkan isi property
+echo "Nama depan saya: " . $informatika->nama_saya . "<br/>";
+echo "Nama belakang saya: " . $informatika->nama_mahasiswa . "<br/>";
+echo "NIM saya: " . $informatika->getNim();
