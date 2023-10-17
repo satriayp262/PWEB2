@@ -1,3 +1,18 @@
+<?php
+//menampilkan class database
+include '../classes/databases.php';
+//instansiasi class database
+$db = new database;
+?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAKAD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="px-3 py-3">
 <nav class="navbar navbar-expand-lg bg-body-secondary">
   <div class="container-fluid">
     <a class="navbar-brand" href="beranda.php">Beranda</a>
@@ -16,23 +31,8 @@
     </div>
   </div>
 </nav>
-<?php
-//menampilkan class database
-include '../classes/databases.php';
-//instansiasi class database
-$db = new database;
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Dosen</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../public/style.css">
-</head>
-<body>
 
+<div class="px-5">
 <h3>Data Dosen</h3>
 <a href="input_dsn.php" class="btn btn-primary">Tambah Dosen</a>
 <table class="table table-striped" style="width: 70%;">
@@ -61,8 +61,5 @@ $db = new database;
     }
     ?>
 </table>
-
-    
-</body>
-</html>
-<script src=”https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js”></script>
+</div>
+</div>

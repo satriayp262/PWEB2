@@ -28,10 +28,15 @@ $db = new database();
         </tr>
         <tr>
             <td></td>
-            <td><button type="submit">Simpan</button></td>
+            <td><input type="submit" value="Simpan" onclick="showAlert()"></input></td>
         </tr>
     </table>
     <?php
     }
     ?>
 </form>
+<script>
+    function showAlert(){
+        alert("Berhasil Diedit!");
+    }
+</script>
