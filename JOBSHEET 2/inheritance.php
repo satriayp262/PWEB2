@@ -3,6 +3,7 @@
 class Manusia {
     public $nama_saya;
     private $nim_saya;
+    protected $alamat_saya;
 
     public function panggil_nama($saya){
         $this->nama_saya = $saya;
@@ -13,6 +14,12 @@ class Manusia {
     public function getNim() {
         return $this->nim_saya;
     }
+    public function setAlamat($alamat) {
+        $this->alamat_saya = $alamat;
+    }
+    public function getAlamat() {
+        return $this->alamat_saya;
+    }
 }
 
 //class turunan dari class manusia
@@ -22,22 +29,16 @@ class Mahasiswa extends Manusia {
     function panggil_mahasiswa($mahasiswa) {
         $this->nama_mahasiswa = $mahasiswa;
     }
-    function setNim($nim) { 
-        parent::setNim($nim); 
-    }
-    function getNim() { 
-        return parent::getNim();
-    }
 }
 
 //instansiasi class mahasiswa
 $informatika = new Mahasiswa();
 
-$informatika->panggil_nama("Satria Yudha");
-$informatika->panggil_mahasiswa("Pangrangau");
+$informatika->panggil_nama("Satria Yudha Pangrangau");
 $informatika->setNim("220302093");
+$informatika->setAlamat("Jalan Slamet");
 
 //menampilkan isi property
-echo "Nama depan saya : " . $informatika->nama_saya . "<br/>";
-echo "Nama belakang saya : " . $informatika->nama_mahasiswa . "<br/>";
-echo "NIM saya : " . $informatika->getNim();
+echo "Nama saya : " . $informatika->nama_saya . "<br/>";
+echo "NIM saya : " . $informatika->getNim() . "<br/>";
+echo "Alamat saya : " . $informatika->getAlamat();
