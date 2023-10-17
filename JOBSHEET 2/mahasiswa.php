@@ -12,6 +12,11 @@ class mahasiswa{
      return "Nama saya adalah Satria";
     }
 
+    //method untuk menampilkan nim
+    function tampil_nim(){
+        return "NIM saya adalah 220302093";
+       }
+
     //method untuk menampilkan alamat
     function tampil_alamat(){
         return "Alamat saya adalah jl slamet sidanegara cilacap tengah";
@@ -44,9 +49,12 @@ class dosen{
 //membuat objek nama_mahasiswa
 $nama_mahasiswa=new mahasiswa();
 $alamat_mahasiswa=new mahasiswa();
+$nim_mahasiswa=new mahasiswa();
 
 //menampilkan objek ke layar
 echo $nama_mahasiswa->tampil_nama();
+echo "</br>";
+echo $nim_mahasiswa->tampil_nim();
 echo "</br>";
 echo $alamat_mahasiswa->tampil_alamat();
 echo "</br>";
