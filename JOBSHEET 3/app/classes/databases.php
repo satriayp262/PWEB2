@@ -12,6 +12,7 @@ class database{
         $this->koneksi = mysqli_connect($this->host,$this->username,$this->password,$this->db);
     }
 
+    //MAHASISWA
     function tampil_mahasiswa(){
         $hasil=array();
         $data=mysqli_query($this->koneksi,"select * from mahasiswa");
@@ -26,6 +27,7 @@ class database{
     }
 
     function edit($id){
+        $hasil=array();
         $data = mysqli_query($this->koneksi,"select * from mahasiswa where id='$id'");
         while($d = mysqli_fetch_array($data)){
             $hasil[] = $d;
@@ -39,5 +41,36 @@ class database{
 
     function hapus($id){
         mysqli_query($this->koneksi,"delete from mahasiswa where id='$id'");
+    }    
+
+    //DOSEN
+    function tampil_dosen(){
+        $hasil=array();
+        $data=mysqli_query($this->koneksi,"select * from dosen");
+        while($d = mysqli_fetch_array($data)){
+            $hasil[] = $d;
+         }
+         return $hasil;
+    }
+
+    function tambah_dsn($nama,$nip,$alamat){
+        mysqli_query($this->koneksi,"insert into dosen (nama,nip,alamat) values('$nama','$nip','$alamat')");
+    }
+
+    function edit_dsn($id){
+        $hasil=array();
+        $data = mysqli_query($this->koneksi,"select * from dosen where id='$id'");
+        while($d = mysqli_fetch_array($data)){
+            $hasil[] = $d;
+        }
+        return $hasil;
+    }
+
+    function update_dsn($id, $nama, $nip, $alamat){
+        mysqli_query($this->koneksi,"update dosen set nama='$nama', nip='$nip', alamat='$alamat' where id='$id'");
+    }  
+
+    function hapus_dsn($id){
+        mysqli_query($this->koneksi,"delete from dosen where id='$id'");
     }    
 }
