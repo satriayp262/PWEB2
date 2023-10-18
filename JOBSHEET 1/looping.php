@@ -18,14 +18,14 @@
     echo "<br/> Perulangan DO WHILE bilangan prima 1 hingga 20 <br/>";
     $angka=2;
     do {
-        $prima = true;
-        for($z=2; $z<= $angka / 2; $z++) {
-            if($angka % $z == 0){
-                $prima= false;
+        $isprima = true;
+        for($i=2; $i<= $angka / 2; $i++) {
+            if($angka % $i == 0){
+                $isprima= false;
                 break;
             }
         }
-        if($prima) {
+        if($isprima) {
             echo $angka . "<br/>";
         }
         $angka++;
