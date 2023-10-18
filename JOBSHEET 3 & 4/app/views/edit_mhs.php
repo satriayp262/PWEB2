@@ -19,15 +19,16 @@ $db = new database();
     <table>
     <div class="mb-3">
         <label class="form-label">NIM</label>
-        <input type="text" name="nim" class="form-control">
+        <input type="hidden" name="id" value="<?php echo $d['id'] ?>" class="form-control">
+        <input type="text" name="nim" value="<?php echo $d['nim'] ?>" class="form-control">
     </div>
     <div class="mb-3">
         <label class="form-label">Nama</label>
-        <input type="text" name="nama" class="form-control">
+        <input type="text" name="nama" value="<?php echo $d['nama'] ?>" class="form-control">
     </div>
     <div class="mb-3">
         <label class="form-label">Alamat</label>
-        <textarea name="alamat" cols="30" rows="5" class="form-control"></textarea>    
+        <textarea name="alamat" cols="30" rows="5" class="form-control"><?php echo $d['alamat'] ?></textarea>    
     </div>
     <div class="d-flex justify-content-between">
     <a href="tampil_mhs.php" class="btn btn-secondary w-100 mx-2">Kembali</a>

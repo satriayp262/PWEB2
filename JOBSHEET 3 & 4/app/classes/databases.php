@@ -67,7 +67,7 @@ class database{
     }
 
     function update_dsn($id, $nama, $nidn, $alamat){
-        mysqli_query($this->koneksi,"update dosen set nama='$nama', nipd='$nidn', alamat='$alamat' where id='$id'");
+        mysqli_query($this->koneksi,"update dosen set nama='$nama', nidn='$nidn', alamat='$alamat' where id='$id'");
     }  
 
     function hapus_dsn($id){
