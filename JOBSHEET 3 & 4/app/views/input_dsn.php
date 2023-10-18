@@ -1,28 +1,31 @@
-<h3>Tambah Data Dosen</h3>
+<?php
+include '../../public/script.php';
+?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAKAD</title>
+</head>
+
+<h3 class="text-center mt-5">Tambah Data Dosen</h3>
+<div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
 <form action="proses_dsn.php?aksi=tambah" method="post">
-    <table>
-        <tr>
-            <td>Nama</td>
-            <td><input type="text" name="nama"></td>
-        </tr>
-        <tr>
-            <td>NIP</td>
-            <td><input type="text" name="nip"></td>
-        </tr>
-        <tr>
-            <td>Alamat</td>
-            <td>
-                <textarea name="alamat" cols="30" rows="5"></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="Simpan" onclick="showAlert()"></input></td>
-        </tr>
-    </table>
+  <div class="mb-3">
+    <label class="form-label">Nama</label>
+    <input type="text" name="nama" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">NIDN</label>
+    <input type="text" name="nidn" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Alamat</label>
+    <textarea name="alamat" cols="30" rows="5" class="form-control"></textarea>
+  </div>
+  <div class="d-flex justify-content-between">
+  <a href="tampil_mhs.php" class="btn btn-secondary w-100 mx-2">Kembali</a>
+  <button type="submit" class="btn btn-primary w-100 mx-2">Submit</button>
+  </div>
 </form>
-<script>
-    function showAlert(){
-        alert("Berhasil Ditambahkan!");
-    }
-</script>
+</div>

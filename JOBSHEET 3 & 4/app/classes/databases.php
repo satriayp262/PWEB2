@@ -53,8 +53,8 @@ class database{
          return $hasil;
     }
 
-    function tambah_dsn($nama,$nip,$alamat){
-        mysqli_query($this->koneksi,"insert into dosen (nama,nip,alamat) values('$nama','$nip','$alamat')");
+    function tambah_dsn($nama,$nidn,$alamat){
+        mysqli_query($this->koneksi,"insert into dosen (nama,nidn,alamat) values('$nama','$nidn','$alamat')");
     }
 
     function edit_dsn($id){
@@ -66,8 +66,8 @@ class database{
         return $hasil;
     }
 
-    function update_dsn($id, $nama, $nip, $alamat){
-        mysqli_query($this->koneksi,"update dosen set nama='$nama', nip='$nip', alamat='$alamat' where id='$id'");
+    function update_dsn($id, $nama, $nidn, $alamat){
+        mysqli_query($this->koneksi,"update dosen set nama='$nama', nipd='$nidn', alamat='$alamat' where id='$id'");
     }  
 
     function hapus_dsn($id){
