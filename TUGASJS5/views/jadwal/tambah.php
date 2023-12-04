@@ -6,22 +6,22 @@ require_once '../../index.php';
 <body>
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
         <h3 class="text-center">Tambah Data Jadwal</h3>
-        <form action="proses_tambah.php" method="post"> <!-- Menambahkan ekstensi file PHP pada action -->
+        <form action="proses_tambah" method="post"> <!-- Menambahkan ekstensi file PHP pada action -->
             <table>
                 <tr>
                     <td>Nama Bus</td>
                     <td>
-                        <select name="id_bus" id="id_bus">
+                        <select name="nama_bus" id="id_bus">
                             <?php
                             // Query untuk mengambil nama-nama bus dari tabel bus
                             $query = "SELECT id_bus, nama_bus FROM bus";
                             $result = mysqli_query($koneksi, $query);
 
                             // Memeriksa apakah query berhasil dijalankan
-                            if ($result && mysqli_num_rows($result) > 0) {
+                            if ($result) {
                                 // Loop untuk menampilkan nama-nama bus dalam dropdown
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    echo "<option value="$row['id_bus']">$row['nama_bus']</option>";
+                                    echo "<option value='" . $row['nama_bus'] . "'>" . $row['nama_bus'] . "</option>";
                                 }
                             } else {
                                 echo "<option value=''>Tidak ada data bus</option>";
