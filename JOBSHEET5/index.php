@@ -15,13 +15,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="beranda.php">Beranda</a>
+                        <a class="nav-link active" aria-current="page" href="home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="tampil_mhs.php">Mahasiswa</a>
+                        <a class="nav-link active" aria-current="page" href="mahasiswa">Mahasiswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tampil_dsn.php">Dosen</a>
+                        <a class="nav-link" href="dosen">Dosen</a>
                     </li>
                 </ul>
             </div>

@@ -15,7 +15,7 @@ $mahasiswa = $mahasiswaController->getAllMahasiswa();
 
         <div class="px-5 py-3">
             <h3>Data Mahasiswa</h3>
-            <a href="tambah.php" class="btn btn-primary mb-3">Tambah Mahasiswa</a>
+            <a href="tambah" class="btn btn-primary mb-3">Tambah Mahasiswa</a>
             <table class="table table-striped">
                 <tr>
                     <th>No</th>
@@ -42,8 +42,8 @@ $mahasiswa = $mahasiswaController->getAllMahasiswa();
                         <td><?php echo $x['agama'] ?></td>
                         <td><?php echo $x['alamat'] ?></td>
                         <td>
-                            <a class="btn btn-warning" href="edit.php?id=<?php echo $x['id']; ?>">Edit</a>
-                            <a class="btn btn-danger" href="hapus.php?id=<?php echo $x['id']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
+                            <a class="btn btn-warning" href="edit?id=<?php echo $x['id']; ?>">Edit</a>
+                            <a class="btn btn-danger" href="hapus?id=<?php echo $x['id']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
                         </td>
                     </tr>
                 <?php

@@ -19,8 +19,8 @@ if (isset($_POST['submit'])){
     $result=$mahasiswaController->createMahasiswa($nim, $nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $agama, $alamat);
 
     if($result){
-        header("Location:index.php");
+        header("Location:mahasiswa");
     }else{
-        header("Location:tambah.php");
+        header("Location:tambah");
     }
 }

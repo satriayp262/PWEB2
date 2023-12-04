@@ -1,7 +1,8 @@
 <?php
 
 include_once '../../config.php';
-include_once '../../controllers/MahasiswaController.php';
+include_once '../../controllers/DosenController.php';
+require '../../index.php';
 
 $database = new database();
 $db = $database->getKoneksi();
@@ -9,11 +10,11 @@ $db = $database->getKoneksi();
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $mahasiswaController=new MahasiswaController($db);
-    $result=$mahasiswaController->deleteMahasiswa($id);
+    $dosenController=new DosenController($db);
+    $result=$dosenController->deleteDosen($id);
 
     if ($result) {
-        header('Location:index.php');
+        header('Location:dosen');
     } else {
         echo "Gagal Menghapus Data";
     }

@@ -1,14 +1,11 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIAKAD</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
+<?php
+require '../../index.php';
+?>
 
 <body>
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
         <h3 class="text-center">Tambah Data Mahasiswa</h3>
-        <form action="proses_tambah.php" method="post">
+        <form action="proses_tambah" method="post">
             <table>
                 <tr>
                     <td>NIM</td>
