@@ -28,6 +28,7 @@ $namabis = mysqli_fetch_assoc($bis);
             <tr>
                 <th>No</th>
                 <th>Nama Bus</th>
+                <th>Nomor Telepon</th>
                 <th>Tujuan</th>
                 <th>Kelas</th>
                 <th>Jam Kedatangan</th>
@@ -46,13 +47,14 @@ $namabis = mysqli_fetch_assoc($bis);
                 <tr>
                     <td><?php echo $no++ ?></td>
                     <td><?php echo $namaBus['nama_bus']; ?></td>
+                    <td><?php echo $namaBus['nomor_telpon']; ?></td>
                     <td><?php echo $jadwalData['tujuan'] ?></td>
                     <td><?php echo $jadwalData['kelas'] ?></td>
                     <td><?php echo $jadwalData['jam_datang'] ?></td>
                     <td><?php echo $jadwalData['jam_berangkat'] ?></td>
                     <td>
-                        <a class="btn btn-warning" href="edit_jadwal?id_jadwal=<?php echo $x['id_jadwal']; ?>">Edit</a>
-                        <a class="btn btn-danger" href="hapus_jadwal?id_jadwal=<?php echo $x['id_jadwal']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
+                        <a class="btn btn-warning" href="edit_jadwal?id_jadwal=<?php echo $jadwalData['id_jadwal']; ?>">Edit</a>
+                        <a class="btn btn-danger" href="hapus_jadwal?id_jadwal=<?php echo $jadwalData['id_jadwal']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
                     </td>
                 </tr>
             </tbody>

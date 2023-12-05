@@ -17,7 +17,6 @@ $pilihbus = $busController->getAllBus();
 $id_bus = $bus['id_bus'];
 $bis = $busController->getBusById($id_bus);
 $namabis = mysqli_fetch_assoc($bis);
-
 ?>  
 
 <body>

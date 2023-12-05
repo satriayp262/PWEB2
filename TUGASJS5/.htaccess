@@ -23,7 +23,7 @@ RewriteRule ^edit_jadwal/?$ views/jadwal/edit.php [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^hapus-jadwal/?$ views/jadwal/hapus.php [QSA,L]
+RewriteRule ^hapus_jadwal/?$ views/jadwal/hapus.php [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

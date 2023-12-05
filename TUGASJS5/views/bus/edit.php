@@ -35,23 +35,23 @@ if (isset($_GET['id_bus'])) {
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
         <h3 class="text-center">Edit Data Bus</h3>
         <?php
-        if ($busData) {
+        // if ($busData) {
         ?>
             <form method="post" action="">
                 <?php
-                if ($busData) {
+                 foreach ($busData as $x) {
                 ?>
                     <table>
                         <tr>
                             <td>Nama Bus</td>
                             <td>
-                                <input type="text" name="nama_bus" value="<?php echo $busData['nama_bus'] ?>" class="form-control">
+                                <input type="text" name="nama_bus" value="<?php echo $x['nama_bus'] ?>" class="form-control">
                             </td>
                         </tr>
                         <tr>
                             <td>Nomor Telepon</td>
                             <td>
-                                <input type="number" name="nomor_telpon" value="<?php echo $busData['nomor_telpon'] ?>" class="form-control">
+                                <input type="number" name="nomor_telpon" value="<?php echo $x['nomor_telpon'] ?>" class="form-control">
                             </td>
                         </tr>
                         <tr>
@@ -66,7 +66,7 @@ if (isset($_GET['id_bus'])) {
                     </table>
             </form>
         <?php
-        }
+        // }
         ?>
     </div>
 
