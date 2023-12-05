@@ -9,19 +9,17 @@ require '../../index.php';
 $database = new database;
 $db = $database->getKoneksi();
 
-$jadwalController = new jadwalController($db);
+$jadwalController = new JadwalController($db);
 $jadwal = $jadwalController->getAllJadwal();
-$busController = new busController($db);
+$busController = new BusController($db);
 $bus = mysqli_fetch_assoc($jadwal);
 $id_bus = $bus['id_bus'];
 $bis = $busController->getBusById($id_bus);
-$namabis = mysqli_fetch_assoc($bis);
-
 ?>
 
 
 <div class="px-5 py-3">
-    <h3>Data Jadwal</h3>
+    <h3 class="text-center">Data Jadwal Bus</h3>
     <a href="tambah" class="btn btn-primary mb-3">Tambah Jadwal</a>
     <table class="table table-striped text-center">
         <thead class="table-primary">

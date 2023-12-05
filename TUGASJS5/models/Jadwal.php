@@ -37,7 +37,7 @@ class Jadwal
 
     public function updateJadwal($id_jadwal, $idBus, $tujuan, $kelas, $jamDatang, $jamBerangkat)
     {
-        $query = "UPDATE jadwal SET id_bus='$idBus', tujuan='$tujuan', kelas='$kelas', jam_datang='$jamatang', jam_berangkat='$jamBerangkat' WHERE id_jadwal='$id_jadwal'";
+        $query = "UPDATE jadwal SET id_bus='$idBus', tujuan='$tujuan', kelas='$kelas', jam_datang='$jamDatang', jam_berangkat='$jamBerangkat' WHERE id_jadwal='$id_jadwal'";
         $result = mysqli_query($this->koneksi, $query);
         if ($result) {
             return true;

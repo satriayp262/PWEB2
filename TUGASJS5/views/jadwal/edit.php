@@ -26,11 +26,11 @@ if (isset($_GET['id_jadwal'])) {
 
     if ($jadwalData) {
         if (isset($_POST['submit'])) {
-            $nama_bus = $_POST['nama_bus'];
+            $id_bus = $_POST['nama_bus'];
             $tujuan = $_POST['tujuan'];
             $kelas = $_POST['kelas'];
-            $jam_datang = $_POST['jam_datang'];
-            $jam_berangkat = $_POST['jam_berangkat'];
+            $jamDatang = $_POST['jam_datang'];
+            $jamBerangkat = $_POST['jam_berangkat'];
 
             $result = $jadwalController->updateJadwal($id_jadwal, $id_bus, $tujuan, $kelas, $jamDatang, $jamBerangkat);
 
@@ -63,8 +63,11 @@ if (isset($_GET['id_jadwal'])) {
                                 <select name="nama_bus" id="id_bus">
                                     <option value="pilih bus">Pilih Bus</option>
                                     <?php foreach ($pilihbus as $x) { ?>
-                                        <option value="<?php echo $x['id_bus']; ?>"><?php echo $x['nama_bus']; ?></option>
+                                        <option value="<?php echo $x['id_bus']; ?>" <?php echo ($x['id_bus'] == $jadwalData['id_bus']) ? 'selected' : ''; ?>>
+                                            <?php echo $x['nama_bus']; ?>
+                                        </option>
                                     <?php } ?>
+
                                 </select>
                             </td>
                         </tr>
