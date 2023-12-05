@@ -20,18 +20,18 @@ class JadwalController
         return $this->model->createJadwal($id_bus, $tujuan, $kelas, $jamDatang, $jamBerangkat);
     }
 
-    public function getJadwalById($id)
+    public function getJadwalById($id_jadwal)
     {
-        return $this->model->getJadwalById($id);
+        return $this->model->getJadwalById($id_jadwal);
     }
 
-    public function updateJadwal($idJadwal, $id_bus, $tujuan, $kelas, $jamDatang, $jamBerangkat)
+    public function updateJadwal($id_jadwal, $id_bus, $tujuan, $kelas, $jamDatang, $jamBerangkat)
     {
-        return $this->model->updateJadwal($idJadwal, $id_bus, $tujuan, $kelas, $jamDatang, $jamBerangkat);
+        return $this->model->updateJadwal($id_jadwal, $id_bus, $tujuan, $kelas, $jamDatang, $jamBerangkat);
     }
 
-    public function deleteJadwal($id)
+    public function deleteJadwal($id_jadwal)
     {
-        return $this->model->deleteJadwal($id);
+        return $this->model->deleteJadwal($id_jadwal);
     }
 }

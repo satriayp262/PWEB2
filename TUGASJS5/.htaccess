@@ -19,11 +19,11 @@ RewriteRule ^proses_tambah/?$ views/jadwal/proses_tambah.php?page=$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^edit/?$ views/jadwal/edit.php [QSA,L]
+RewriteRule ^edit_jadwal/?$ views/jadwal/edit.php [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^hapus/?$ views/jadwal/hapus.php [QSA,L]
+RewriteRule ^hapus-jadwal/?$ views/jadwal/hapus.php [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

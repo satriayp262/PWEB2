@@ -47,10 +47,8 @@ class Bus
 
     public function deleteBus($id_bus)
     {
-        $query = "DELETE FROM bus WHERE id_bus=?";
-        $stmt = mysqli_prepare($this->koneksi, $query);
-        mysqli_stmt_bind_param($stmt, "i", $id_bus);
-        $result = mysqli_stmt_execute($stmt);
+        $query = "DELETE FROM bus WHERE id_bus='$id_bus'";
+        $result = mysqli_query($this->koneksi, $query);
         if ($result) {
             return true;
         } else {

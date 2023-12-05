@@ -1,5 +1,4 @@
 <?php
-
 include_once '../../config.php';
 include_once '../../controllers/BusController.php';
 require '../../index.php';
@@ -44,7 +43,7 @@ if (isset($_GET['id_bus'])) {
                 ?>
                     <table>
                         <tr>
-                            <td>Nama</td>
+                            <td>Nama Bus</td>
                             <td>
                                 <input type="text" name="nama_bus" value="<?php echo $busData['nama_bus'] ?>" class="form-control">
                             </td>

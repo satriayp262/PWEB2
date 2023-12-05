@@ -1,7 +1,7 @@
 <?php
 
 include_once '../../config.php';
-include_once '../../controllers/DosenController.php';
+include_once '../../controllers/BusController.php';
 
 $database= new database();
 $db=$database->getKoneksi();

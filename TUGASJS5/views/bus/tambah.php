@@ -9,7 +9,7 @@ require '../../index.php';
             <table>
                 <tr>
                     <td>Nama</td>
-                    <td><input type="text" name="nama" class="form-control"></td>
+                    <td><input type="text" name="nama_bus" class="form-control"></td>
                 </tr>
                 <tr>
                     <td>Telepon</td>

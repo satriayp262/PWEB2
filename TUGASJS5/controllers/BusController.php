@@ -32,6 +32,6 @@ class BusController
 
     public function deleteBus($id_bus)
     {
-        return $this->model->deleteJadwal($id_bus);
+        return $this->model->deleteBus($id_bus);
     }
 }

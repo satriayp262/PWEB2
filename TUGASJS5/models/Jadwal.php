@@ -28,16 +28,16 @@ class Jadwal
         }
     }
 
-    public function getJadwalById($id)
+    public function getJadwalById($id_jadwal)
     {
-        $query = "SELECT * FROM jadwal WHERE id=$id";
+        $query = "SELECT * FROM jadwal WHERE id_jadwal=$id_jadwal";
         $result = mysqli_query($this->koneksi, $query);
         return mysqli_fetch_assoc($result);
     }
 
-    public function updateJadwal($idJadwal, $idBus, $tujuan, $kelas, $jamDatang, $jamBerangkat)
+    public function updateJadwal($id_jadwal, $idBus, $tujuan, $kelas, $jamDatang, $jamBerangkat)
     {
-        $query = "UPDATE jadwal SET id_bus='$idBus', tujuan='$tujuan', kelas='$kelas', jam_datang='$jamDatang', jam_berangkat='$jamBerangkat' WHERE id_jadwal='$idJadwal'";
+        $query = "UPDATE jadwal SET id_bus='$idBus', tujuan='$tujuan', kelas='$kelas', jam_datang='$jamDatang', jam_berangkat='$jamBerangkat' WHERE id_jadwal='$id_jadwal'";
         $result = mysqli_query($this->koneksi, $query);
         if ($result) {
             return true;
@@ -46,9 +46,9 @@ class Jadwal
         }
     }
 
-    public function deleteJadwal($id)
+    public function deleteJadwal($id_jadwal)
     {
-        $query = "DELETE FROM jadwal WHERE id='$id'";
+        $query = "DELETE FROM jadwal WHERE id_jadwal='$id_jadwal'";
         $result = mysqli_query($this->koneksi, $query);
         if ($result) {
             return true;

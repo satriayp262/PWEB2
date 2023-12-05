@@ -1,33 +1,39 @@
 <?php
-// Menggunakan require_once untuk memastikan file index.php hanya di-require sekali jika sudah pernah di-include sebelumnya
-require_once '../../index.php';
-?>
+//memanggil class model database
+include_once '../../config.php';
+include_once '../../controllers/JadwalController.php';
+include_once '../../controllers/BusController.php';
+require '../../index.php';
+
+//instansiasi class database
+$database = new database;
+$db = $database->getKoneksi();
+
+$jadwalController = new jadwalController($db);
+$jadwal = $jadwalController->getAllJadwal();
+$busController = new busController($db);
+$bus = mysqli_fetch_assoc($jadwal);
+$pilihbus = $busController->getAllBus();
+$id_bus = $bus['id_bus'];
+$bis = $busController->getBusById($id_bus);
+$namabis = mysqli_fetch_assoc($bis);
+
+?>  
 
 <body>
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
         <h3 class="text-center">Tambah Data Jadwal</h3>
-        <form action="proses_tambah" method="post"> <!-- Menambahkan ekstensi file PHP pada action -->
+        <form action="proses_tambah" method="post">
             <table>
                 <tr>
                     <td>Nama Bus</td>
                     <td>
                         <select name="nama_bus" id="id_bus">
-                            <?php
-                            // Query untuk mengambil nama-nama bus dari tabel bus
-                            $query = "SELECT id_bus, nama_bus FROM bus";
-                            $result = mysqli_query($koneksi, $query);
-
-                            // Memeriksa apakah query berhasil dijalankan
-                            if ($result) {
-                                // Loop untuk menampilkan nama-nama bus dalam dropdown
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo "<option value='" . $row['nama_bus'] . "'>" . $row['nama_bus'] . "</option>";
-                                }
-                            } else {
-                                echo "<option value=''>Tidak ada data bus</option>";
-                            }
-                            ?>
-                        </select>
+                            <option value="pilih bus">Pilih Bus</option>
+                            <?php foreach ($pilihbus as $x) { ?>
+                                <option value="<?php echo $x['id_bus'];?>"><?php echo $x['nama_bus'];?></option>
+                                <?php } ?>
+                            </select>
                     </td>
                 </tr>
                 <tr>
