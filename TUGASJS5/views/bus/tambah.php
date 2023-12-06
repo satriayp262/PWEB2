@@ -3,7 +3,7 @@ require '../../header.php';
 ?>
 
 <body>
-    <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
+    <div class="card px-3 py-3" style="margin: 119px auto; padding: 20px; max-width:400px">
         <h3 class="text-center">Tambah Data Bus</h3>
         <form action="proses_tambah_bus" method="post">
             <table>

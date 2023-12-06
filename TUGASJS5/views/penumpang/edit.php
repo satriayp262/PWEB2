@@ -21,10 +21,10 @@ $namabis = mysqli_fetch_assoc($bis);
 if (isset($_GET['id_pa'])) {
     $id_pa = $_GET['id_pa'];
 
-    $jadwalController = new JadwalController($db);
-    $jadwalData = $jadwalController->getJadwalById($id_jadwal);
+    $penumpangController = new PenumpangController($db);
+    $penumpangData = $penumpangController->getPenumpangById($id_pa);
 
-    if ($jadwalData) {
+    if ($penumpangData) {
         if (isset($_POST['submit'])) {
             $id_bus = $_POST['nama_bus'];
             $bulan = $_POST['bulan'];
@@ -46,7 +46,7 @@ if (isset($_GET['id_pa'])) {
 ?>
 
 <body>
-    <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
+    <div class="card px-3 py-3" style="margin: 63px auto; padding: 20px; max-width:400px">
         <h3 class="text-center">Edit Data Jumlah Penumpang</h3>
         <?php
         if ($penumpangData) {
@@ -59,7 +59,7 @@ if (isset($_GET['id_pa'])) {
                         <tr>
                             <td>Nama Bus</td>
                             <td>
-                                <select name="nama_bus" id="id_bus">
+                                <select name="nama_bus" id="id_bus" class="form-control">
                                     <option value="pilih bus">Pilih Bus</option>
                                     <?php foreach ($pilihbus as $x) { ?>
                                         <option value="<?php echo $x['id_bus']; ?>" <?php echo ($x['id_bus'] == $jadwalData['id_bus']) ? 'selected' : ''; ?>>
@@ -82,29 +82,23 @@ if (isset($_GET['id_pa'])) {
                                     <option value="Juni" <?php if ($penumpangData['bulan'] === 'Juni') echo 'selected'; ?>>Juni</option>
                                     <option value="Juli" <?php if ($penumpangData['bulan'] === 'Juli') echo 'selected'; ?>>Juli</option>
                                     <option value="Agustus" <?php if ($penumpangData['bulan'] === 'Agustus') echo 'selected'; ?>>Agustus</option>
-                                    <option value="Juni" <?php if ($penumpangData['bulan'] === 'Juni') echo 'selected'; ?>>Juni</option>
-                                    <option value="Juni" <?php if ($penumpangData['bulan'] === 'Juni') echo 'selected'; ?>>Juni</option>
-                                    <option value="Juni" <?php if ($penumpangData['bulan'] === 'Juni') echo 'selected'; ?>>Juni</option>
-                                    <option value="Juni" <?php if ($penumpangData['bulan'] === 'Juni') echo 'selected'; ?>>Juni</option>
+                                    <option value="September" <?php if ($penumpangData['bulan'] === 'September') echo 'selected'; ?>>September</option>
+                                    <option value="Oktober" <?php if ($penumpangData['bulan'] === 'Oktober') echo 'selected'; ?>>Oktober</option>
+                                    <option value="November" <?php if ($penumpangData['bulan'] === 'November') echo 'selected'; ?>>November</option>
+                                    <option value="Desember" <?php if ($penumpangData['bulan'] === 'Desember') echo 'selected'; ?>>Desember</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
-                            <td>Kelas</td>
+                            <td>Tahun</td>
                             <td>
-                                <input type="text" name="kelas" value="<?php echo $jadwalData['kelas'] ?>" class="form-control">
+                                <input type="text" name="tahun" value="<?php echo $penumpangData['tahun'] ?>" class="form-control">
                             </td>
                         </tr>
                         <tr>
-                            <td>Jam Kedatangan</td>
+                            <td>Jumlah</td>
                             <td>
-                                <input type="text" name="jam_datang" value="<?php echo $jadwalData['jam_datang'] ?>" class="form-control">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jam Keberangkatan</td>
-                            <td>
-                                <input type="text" name="jam_berangkat" value="<?php echo $jadwalData['jam_berangkat'] ?>" class="form-control">
+                                <input type="text" name="jumlah" value="<?php echo $penumpangData['jumlah'] ?>" class="form-control">
                             </td>
                         </tr>
                         <tr>

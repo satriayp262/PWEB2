@@ -47,7 +47,7 @@ if (isset($_GET['id_jadwal'])) {
 ?>
 
 <body>
-    <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
+    <div class="card px-3 py-3" style="margin: 60px auto; padding: 20px; max-width:400px">
         <h3 class="text-center">Edit Data Jadwal</h3>
         <?php
         if ($jadwalData) {
@@ -60,7 +60,7 @@ if (isset($_GET['id_jadwal'])) {
                         <tr>
                             <td>Nama Bus</td>
                             <td>
-                                <select name="nama_bus" id="id_bus">
+                                <select name="nama_bus" id="id_bus" class="form-control">
                                     <option value="pilih bus">Pilih Bus</option>
                                     <?php foreach ($pilihbus as $x) { ?>
                                         <option value="<?php echo $x['id_bus']; ?>" <?php echo ($x['id_bus'] == $jadwalData['id_bus']) ? 'selected' : ''; ?>>

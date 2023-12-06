@@ -20,14 +20,14 @@ $namabis = mysqli_fetch_assoc($bis);
 ?>
 
 <body>
-    <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
+    <div class="card px-3 py-3" style="margin: 60px auto; padding: 20px; max-width:400px">
         <h3 class="text-center">Tambah Data Jadwal</h3>
         <form action="proses_tambah" method="post">
             <table>
                 <tr>
                     <td>Nama Bus</td>
                     <td>
-                        <select name="nama_bus" id="id_bus">
+                        <select name="nama_bus" id="id_bus" class="form-control">
                             <option value="pilih bus">Pilih Bus</option>
                             <?php foreach ($pilihbus as $x) { ?>
                                 <option value="<?php echo $x['id_bus']; ?>"><?php echo $x['nama_bus']; ?></option>

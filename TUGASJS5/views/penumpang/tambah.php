@@ -12,22 +12,22 @@ $db = $database->getKoneksi();
 $penumpangController = new PenumpangController($db);
 $penumpang = $penumpangController->getAllPenumpang();
 $busController = new busController($db);
-$bus = mysqli_fetch_assoc($jadwal);
+$bus = mysqli_fetch_assoc($penumpang);
 $pilihbus = $busController->getAllBus();
 $id_bus = $bus['id_bus'];
 $bis = $busController->getBusById($id_bus);
 $namabis = mysqli_fetch_assoc($bis);
 ?>
 
-<body>
-    <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
+<body >
+    <div class="card px-3 py-3" style="margin: 63px auto; padding: 20px; max-width:320px">
         <h3 class="text-center">Tambah Data Jumlah Penumpang</h3>
-        <form action="proses_tambah" method="post">
+        <form action="proses_tambah_penumpang" method="post">
             <table>
                 <tr>
                     <td>Nama Bus</td>
                     <td>
-                        <select name="nama_bus" id="id_bus">
+                        <select name="nama_bus" id="id_bus" class="form-control">
                             <option value="pilih bus">Pilih Bus</option>
                             <?php foreach ($pilihbus as $x) { ?>
                                 <option value="<?php echo $x['id_bus']; ?>"><?php echo $x['nama_bus']; ?></option>
@@ -39,6 +39,7 @@ $namabis = mysqli_fetch_assoc($bis);
                     <td>Bulan</td>
                     <td>
                         <select name="bulan" class="form-control">
+                            <option value="">Pilih Bulan</option>
                             <option value="Januari">Januari</option>
                             <option value="Februari">Februari</option>
                             <option value="Maret">Maret</option>

@@ -12,14 +12,13 @@ $db = new database;
 </head>
 <body>
 
-<div>
 <nav class="navbar navbar-expand-lg" style="background-color:darkorange;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" style="color:aliceblue">SIAKAD</a>
+    <img src="../../public/asset/logo_situs.png" alt="" style="width: 10%">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav" style="margin-left:70%">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php" style="color:aliceblue">Beranda</a>
@@ -36,7 +35,7 @@ $db = new database;
 </nav>
 
 <div class="px-5">
-<h3 class="text-center">Data Dosen</h3>
+<h3 class="text-center mt-3">Data Dosen</h3>
 <a href="input_dsn.php" class="btn btn-primary mb-3">Tambah Dosen</a>
 
 <?php 
@@ -61,6 +60,7 @@ elseif(isset($_GET['success']) && $_GET['success'] == "hapus"){
 ?>
 
 <table class="table table-striped text-center">
+  <thead class="table-warning">
     <tr>
         <th>No</th>
         <th>Nama</th>
@@ -68,6 +68,7 @@ elseif(isset($_GET['success']) && $_GET['success'] == "hapus"){
         <th>Alamat</th>
         <th>Opsi</th>
     </tr>
+    </thead>
     <?php 
     $no = 1;
     foreach($db->tampil_dosen() as $x){

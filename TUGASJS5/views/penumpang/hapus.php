@@ -10,7 +10,7 @@ $db = $database->getKoneksi();
 if (isset($_GET['id_pa'])) {
     $id_pa = $_GET['id_pa'];
 
-    $penumpangController=new JadwalController($db);
+    $penumpangController=new PenumpangController($db);
     $result=$penumpangController->deletePenumpang($id_pa);
 
     if ($result) {

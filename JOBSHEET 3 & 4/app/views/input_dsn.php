@@ -8,14 +8,13 @@ include '../../public/script.php';
     <title>SIAKAD</title>
 </head>
 
-<div>
 <nav class="navbar navbar-expand-lg" style="background-color:darkorange;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" style="color:aliceblue">SIAKAD</a>
+    <img src="../../public/asset/logo_situs.png" alt="" style="width: 10%">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav" style="margin-left:70%">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php" style="color:aliceblue">Beranda</a>

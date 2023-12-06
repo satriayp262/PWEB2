@@ -12,15 +12,15 @@ $db = $database->getKoneksi();
 $penumpangController = new PenumpangController($db);
 $penumpang = $penumpangController->getAllPenumpang();
 $busController = new BusController($db);
-$bus = mysqli_fetch_assoc($jadwal);
+$bus = mysqli_fetch_assoc($penumpang);
 $id_bus = $bus['id_bus'];
 $bis = $busController->getBusById($id_bus);
 ?>
 
 
-<div class="px-5 py-3">
-    <h3 class="text-center">Data Jadwal Bus</h3>
-    <a href="tambah" class="btn btn-primary mb-3">Tambah Jadwal</a>
+<div class="px-5 py-3" >
+    <h3 class="text-center">Data Jumlah Penumpang Bus</h3>
+    <a href="tambah_penumpang" class="btn btn-primary mb-3">Tambah Penumpang</a>
     <table class="table table-striped text-center">
         <thead class="table-primary">
             <tr>
@@ -39,19 +39,17 @@ $bis = $busController->getBusById($id_bus);
             $busData = $busController->getBusById($penumpangData['id_bus']);
             $namaBus = mysqli_fetch_assoc($busData);
         ?>
-            <tbody>
-                <tr>
-                    <td><?php echo $no++ ?></td>
-                    <td><?php echo $namaBus['nama_bus']; ?></td>
-                    <td><?php echo $jadwalData['bulan'] ?></td>
-                    <td><?php echo $jadwalData['tahun'] ?></td>
-                    <td><?php echo $jadwalData['jumlah'] ?></td>
-                    <td>
-                        <a class="btn btn-warning" href="edit_penumpang?id_penumpang=<?php echo $jadwalData['id_penumpang']; ?>">Edit</a>
-                        <a class="btn btn-danger" href="hapus_penumpang?id_penumpang=<?php echo $jadwalData['id_penumpang']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
-                    </td>
-                </tr>
-            </tbody>
+            <tr>
+                <td><?php echo $no++ ?></td>
+                <td><?php echo $namaBus['nama_bus']; ?></td>
+                <td><?php echo $penumpangData['bulan'] ?></td>
+                <td><?php echo $penumpangData['tahun'] ?></td>
+                <td><?php echo $penumpangData['jumlah'] ?></td>
+                <td>
+                    <a class="btn btn-warning" href="edit_penumpang?id_pa=<?php echo $jadwalData['id_pa']; ?>">Edit</a>
+                    <a class="btn btn-danger" href="hapus_penumpang?id_pa=<?php echo $jadwalData['id_pa']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
+                </td>
+            </tr>
         <?php
         }
         ?>

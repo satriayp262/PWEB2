@@ -32,7 +32,7 @@ if (isset($_GET['id_bus'])) {
 ?>
 
 <body>
-    <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
+    <div class="card px-3 py-3" style="margin: 119px auto; padding: 20px; max-width:400px">
         <h3 class="text-center">Edit Data Bus</h3>
         <?php
         // if ($busData) {

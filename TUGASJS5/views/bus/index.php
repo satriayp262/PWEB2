@@ -29,7 +29,6 @@ $bus = $busController->getAllBus();
         $no = 1;
         foreach ($bus as $x) {
         ?>
-            <tbody>
                 <tr>
                     <td><?php echo $no++ ?></td>
                     <td><?php echo $x['nama_bus'] ?></td>
@@ -39,7 +38,6 @@ $bus = $busController->getAllBus();
                         <a class="btn btn-danger" href="hapus_bus?id_bus=<?php echo $x['id_bus']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
                     </td>
                 </tr>
-            </tbody>
         <?php
         }
         ?>

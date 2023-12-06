@@ -23,6 +23,9 @@
                         <a class="nav-link mx-2" href="jadwal" style="color:white;">Jadwal</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link mx-2" href="penumpang" style="color:white;">Penumpang</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link mx-2" href="bus" style="color:white;">Bus</a>
                     </li>
                 </ul>
