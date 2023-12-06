@@ -1,7 +1,7 @@
 <?php
 
 include_once '../../config.php';
-include_once '../../controllers/JadwalController.php';
+include_once '../../controllers/PenumpangController.php';
 include_once '../../controllers/BusController.php';
 require '../../header.php';
 
@@ -9,8 +9,8 @@ require '../../header.php';
 $database = new database;
 $db = $database->getKoneksi();
 
-$jadwalController = new jadwalController($db);
-$jadwal = $jadwalController->getAllJadwal();
+$penumpangController = new penumpangController($db);
+$penumpang = $penumpangController->getAllPenumpang();
 $busController = new busController($db);
 $bus = mysqli_fetch_assoc($jadwal);
 $pilihbus = $busController->getAllBus();
@@ -18,8 +18,8 @@ $id_bus = $bus['id_bus'];
 $bis = $busController->getBusById($id_bus);
 $namabis = mysqli_fetch_assoc($bis);
 
-if (isset($_GET['id_jadwal'])) {
-    $id_jadwal = $_GET['id_jadwal'];
+if (isset($_GET['id_pa'])) {
+    $id_pa = $_GET['id_pa'];
 
     $jadwalController = new JadwalController($db);
     $jadwalData = $jadwalController->getJadwalById($id_jadwal);
@@ -27,34 +27,33 @@ if (isset($_GET['id_jadwal'])) {
     if ($jadwalData) {
         if (isset($_POST['submit'])) {
             $id_bus = $_POST['nama_bus'];
-            $tujuan = $_POST['tujuan'];
-            $kelas = $_POST['kelas'];
-            $jamDatang = $_POST['jam_datang'];
-            $jamBerangkat = $_POST['jam_berangkat'];
+            $bulan = $_POST['bulan'];
+            $tahun = $_POST['tahun'];
+            $jumlah = $_POST['$jumlah']
 
-            $result = $jadwalController->updateJadwal($id_jadwal, $id_bus, $tujuan, $kelas, $jamDatang, $jamBerangkat);
+            $result = $penumpangController->updatePenumpang($id_pa, $id_bus, $bulan, $tahun, $jumlah);
 
             if ($result) {
-                header("location:jadwal");
+                header("location:penumpang");
             } else {
                 header("location:edit");
             }
         }
     } else {
-        echo "Jadwal Tidak Ditemukan!";
+        echo "Data Tidak Ditemukan!";
     }
 }
 ?>
 
 <body>
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
-        <h3 class="text-center">Edit Data Jadwal</h3>
+        <h3 class="text-center">Edit Data Jumlah Penumpang</h3>
         <?php
-        if ($jadwalData) {
+        if ($penumpangData) {
         ?>
             <form method="post" action="">
                 <?php
-                if ($jadwalData) {
+                if ($penumpangData) {
                 ?>
                     <table>
                         <tr>
@@ -72,9 +71,22 @@ if (isset($_GET['id_jadwal'])) {
                             </td>
                         </tr>
                         <tr>
-                            <td>Tujuan</td>
+                            <td>bulan</td>
                             <td>
-                                <input type="text" name="tujuan" value="<?php echo $jadwalData['tujuan'] ?>" class="form-control">
+                                <select name="bulan" class="form-control">
+                                    <option value="Januari" <?php if ($penumpangData['bulan'] === 'Januari') echo 'selected'; ?>>Januari</option>
+                                    <option value="Februari" <?php if ($penumpangData['bulan'] === 'Februari') echo 'selected'; ?>>Februari</option>
+                                    <option value="Maret" <?php if ($penumpangData['bulan'] === 'Maret') echo 'selected'; ?>>Maret</option>
+                                    <option value="April" <?php if ($penumpangData['bulan'] === 'April') echo 'selected'; ?>>April</option>
+                                    <option value="Mei" <?php if ($penumpangData['bulan'] === 'Mei') echo 'selected'; ?>>Mei</option>
+                                    <option value="Juni" <?php if ($penumpangData['bulan'] === 'Juni') echo 'selected'; ?>>Juni</option>
+                                    <option value="Juli" <?php if ($penumpangData['bulan'] === 'Juli') echo 'selected'; ?>>Juli</option>
+                                    <option value="Agustus" <?php if ($penumpangData['bulan'] === 'Agustus') echo 'selected'; ?>>Agustus</option>
+                                    <option value="Juni" <?php if ($penumpangData['bulan'] === 'Juni') echo 'selected'; ?>>Juni</option>
+                                    <option value="Juni" <?php if ($penumpangData['bulan'] === 'Juni') echo 'selected'; ?>>Juni</option>
+                                    <option value="Juni" <?php if ($penumpangData['bulan'] === 'Juni') echo 'selected'; ?>>Juni</option>
+                                    <option value="Juni" <?php if ($penumpangData['bulan'] === 'Juni') echo 'selected'; ?>>Juni</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>

@@ -2,7 +2,7 @@
 //memanggil class model database
 include_once '../../config.php';
 include_once '../../controllers/BusController.php';
-require '../../index.php';
+require '../../header.php';
 
 //instansiasi class database
 $database = new database;
@@ -45,4 +45,9 @@ $bus = $busController->getAllBus();
         ?>
     </table>
 </div>
+
+<div style="background-color: blue; color: white; text-align: center; padding: 10px;"> 
+    &copy; 2023 Terminal Bus Cilacap
+</div>
+
 </div>

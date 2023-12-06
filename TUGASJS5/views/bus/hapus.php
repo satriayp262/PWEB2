@@ -2,7 +2,7 @@
 
 include_once '../../config.php';
 include_once '../../controllers/BusController.php';
-require '../../index.php';
+require '../../header.php';
 
 $database = new database();
 $db = $database->getKoneksi();

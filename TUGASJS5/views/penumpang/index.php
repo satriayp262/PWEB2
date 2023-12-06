@@ -1,7 +1,7 @@
 <?php
 //memanggil class model database
 include_once '../../config.php';
-include_once '../../controllers/JadwalController.php';
+include_once '../../controllers/PenumpangController.php';
 include_once '../../controllers/BusController.php';
 require '../../header.php';
 
@@ -9,8 +9,8 @@ require '../../header.php';
 $database = new database;
 $db = $database->getKoneksi();
 
-$jadwalController = new JadwalController($db);
-$jadwal = $jadwalController->getAllJadwal();
+$penumpangController = new PenumpangController($db);
+$penumpang = $penumpangController->getAllPenumpang();
 $busController = new BusController($db);
 $bus = mysqli_fetch_assoc($jadwal);
 $id_bus = $bus['id_bus'];
@@ -26,33 +26,29 @@ $bis = $busController->getBusById($id_bus);
             <tr>
                 <th>No</th>
                 <th>Nama Bus</th>
-                <th>Nomor Telepon</th>
-                <th>Tujuan</th>
-                <th>Kelas</th>
-                <th>Jam Kedatangan</th>
-                <th>Jam Keberangkatan</th>
+                <th>Bulan</th>
+                <th>Tahun</th>
+                <th>Jumlah</th>
                 <th>Opsi</th>
             </tr>
         </thead>
         <?php
         $no = 1;
-        foreach ($jadwal as $jadwalData) {
-            // Ambil nama bus berdasarkan id_bus pada setiap jadwal
-            $busData = $busController->getBusById($jadwalData['id_bus']);
+        foreach ($penumpang as $penumpangData) {
+            // Ambil nama bus berdasarkan id_bus pada setiap data
+            $busData = $busController->getBusById($penumpangData['id_bus']);
             $namaBus = mysqli_fetch_assoc($busData);
         ?>
             <tbody>
                 <tr>
                     <td><?php echo $no++ ?></td>
                     <td><?php echo $namaBus['nama_bus']; ?></td>
-                    <td><?php echo $namaBus['nomor_telpon']; ?></td>
-                    <td><?php echo $jadwalData['tujuan'] ?></td>
-                    <td><?php echo $jadwalData['kelas'] ?></td>
-                    <td><?php echo $jadwalData['jam_datang'] ?></td>
-                    <td><?php echo $jadwalData['jam_berangkat'] ?></td>
+                    <td><?php echo $jadwalData['bulan'] ?></td>
+                    <td><?php echo $jadwalData['tahun'] ?></td>
+                    <td><?php echo $jadwalData['jumlah'] ?></td>
                     <td>
-                        <a class="btn btn-warning" href="edit_jadwal?id_jadwal=<?php echo $jadwalData['id_jadwal']; ?>">Edit</a>
-                        <a class="btn btn-danger" href="hapus_jadwal?id_jadwal=<?php echo $jadwalData['id_jadwal']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
+                        <a class="btn btn-warning" href="edit_penumpang?id_penumpang=<?php echo $jadwalData['id_penumpang']; ?>">Edit</a>
+                        <a class="btn btn-danger" href="hapus_penumpang?id_penumpang=<?php echo $jadwalData['id_penumpang']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
                     </td>
                 </tr>
             </tbody>

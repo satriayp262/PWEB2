@@ -1,7 +1,7 @@
 <?php
 //memanggil class model database
 include_once '../../config.php';
-include_once '../../controllers/JadwalController.php';
+include_once '../../controllers/PenumpangController.php';
 include_once '../../controllers/BusController.php';
 require '../../header.php';
 
@@ -9,8 +9,8 @@ require '../../header.php';
 $database = new database;
 $db = $database->getKoneksi();
 
-$jadwalController = new jadwalController($db);
-$jadwal = $jadwalController->getAllJadwal();
+$penumpangController = new PenumpangController($db);
+$penumpang = $penumpangController->getAllPenumpang();
 $busController = new busController($db);
 $bus = mysqli_fetch_assoc($jadwal);
 $pilihbus = $busController->getAllBus();
@@ -21,7 +21,7 @@ $namabis = mysqli_fetch_assoc($bis);
 
 <body>
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
-        <h3 class="text-center">Tambah Data Jadwal</h3>
+        <h3 class="text-center">Tambah Data Jumlah Penumpang</h3>
         <form action="proses_tambah" method="post">
             <table>
                 <tr>
@@ -36,20 +36,31 @@ $namabis = mysqli_fetch_assoc($bis);
                     </td>
                 </tr>
                 <tr>
-                    <td>Tujuan</td>
-                    <td><input type="text" name="tujuan" class="form-control"></td>
+                    <td>Bulan</td>
+                    <td>
+                        <select name="bulan" class="form-control">
+                            <option value="Januari">Januari</option>
+                            <option value="Februari">Februari</option>
+                            <option value="Maret">Maret</option>
+                            <option value="April">April</option>
+                            <option value="Mei">Mei</option>
+                            <option value="Juni">Juni</option>
+                            <option value="Juli">Juli</option>
+                            <option value="Agustus">Agustus</option>
+                            <option value="September">September</option>
+                            <option value="Oktober">Oktober</option>
+                            <option value="November">November</option>
+                            <option value="Desember">Desember</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Kelas</td>
-                    <td><input type="text" name="kelas" class="form-control"></td>
+                    <td>Tahun</td>
+                    <td><input type="text" name="tahun" class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>Jam Kedatangan</td>
-                    <td><input type="text" name="jam_datang" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td>Jam Keberangkatan</td>
-                    <td><input type="text" name="jam_berangkat" class="form-control"></td>
+                    <td>Jumlah</td>
+                    <td><input type="text" name="jumlah" class="form-control"></td>
                 </tr>
                 <tr>
                     <td></td>
