@@ -56,7 +56,7 @@ $bis = $busController->getBusById($id_bus);
     </table>
 </div>
 
-<div style="background-color: blue; color: white; text-align: center; padding: 10px;">
+<div class="fixed-bottom" style="background-color: blue; color: white; text-align: center; padding: 10px;">
     &copy; 2023 Terminal Bus Cilacap
 </div>
 

@@ -29,7 +29,7 @@ if (isset($_GET['id_pa'])) {
             $id_bus = $_POST['nama_bus'];
             $bulan = $_POST['bulan'];
             $tahun = $_POST['tahun'];
-            $jumlah = $_POST['$jumlah']
+            $jumlah = $_POST['$jumlah'];
 
             $result = $penumpangController->updatePenumpang($id_pa, $id_bus, $bulan, $tahun, $jumlah);
 
