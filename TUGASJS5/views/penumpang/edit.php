@@ -12,7 +12,7 @@ $db = $database->getKoneksi();
 $penumpangController = new penumpangController($db);
 $penumpang = $penumpangController->getAllPenumpang();
 $busController = new busController($db);
-$bus = mysqli_fetch_assoc($jadwal);
+$bus = mysqli_fetch_assoc($penumpang);
 $pilihbus = $busController->getAllBus();
 $id_bus = $bus['id_bus'];
 $bis = $busController->getBusById($id_bus);
@@ -62,7 +62,7 @@ if (isset($_GET['id_pa'])) {
                                 <select name="nama_bus" id="id_bus" class="form-control">
                                     <option value="pilih bus">Pilih Bus</option>
                                     <?php foreach ($pilihbus as $x) { ?>
-                                        <option value="<?php echo $x['id_bus']; ?>" <?php echo ($x['id_bus'] == $jadwalData['id_bus']) ? 'selected' : ''; ?>>
+                                        <option value="<?php echo $x['id_bus']; ?>" <?php echo ($x['id_bus'] == $penumpangData['id_bus']) ? 'selected' : ''; ?>>
                                             <?php echo $x['nama_bus']; ?>
                                         </option>
                                     <?php } ?>

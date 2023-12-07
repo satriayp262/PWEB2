@@ -12,7 +12,7 @@ class Databases {
     }
 
     function tampil_pasien(){
-        $data = mysqli_query($this->koneksi, "SELECT * FROM rumah_sakit");
+        $data = mysqli_query($this->koneksi, "SELECT * FROM farmasi");
         while ($d = mysqli_fetch_array($data)) {
             $hasil[] = $d;
     }
@@ -21,4 +21,5 @@ class Databases {
 
     function tambah_pasien($nama,$jenis_kelamin, $alamat){
         
+    }
 }

@@ -46,8 +46,8 @@ $bis = $busController->getBusById($id_bus);
                 <td><?php echo $penumpangData['tahun'] ?></td>
                 <td><?php echo $penumpangData['jumlah'] ?></td>
                 <td>
-                    <a class="btn btn-warning" href="edit_penumpang?id_pa=<?php echo $jadwalData['id_pa']; ?>">Edit</a>
-                    <a class="btn btn-danger" href="hapus_penumpang?id_pa=<?php echo $jadwalData['id_pa']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
+                    <a class="btn btn-warning" href="edit_penumpang?id_pa=<?php echo $penumpangData['id_pa']; ?>">Edit</a>
+                    <a class="btn btn-danger" href="hapus_penumpang?id_pa=<?php echo $penumpangData['id_pa']; ?>" onclick="return confirm('Apakah anda yakin akan menghapus..?')">Hapus</a>
                 </td>
             </tr>
         <?php
