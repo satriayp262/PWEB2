@@ -86,13 +86,13 @@ if (isset($_GET['id_jadwal'])) {
                         <tr>
                             <td>Jam Kedatangan</td>
                             <td>
-                                <input type="text" name="jam_datang" value="<?php echo $jadwalData['jam_datang'] ?>" class="form-control">
+                                <input type="time" name="jam_datang" value="<?php echo $jadwalData['jam_datang'] ?>" class="form-control">
                             </td>
                         </tr>
                         <tr>
                             <td>Jam Keberangkatan</td>
                             <td>
-                                <input type="text" name="jam_berangkat" value="<?php echo $jadwalData['jam_berangkat'] ?>" class="form-control">
+                                <input type="time" name="jam_berangkat" value="<?php echo $jadwalData['jam_berangkat'] ?>" class="form-control">
                             </td>
                         </tr>
                         <tr>

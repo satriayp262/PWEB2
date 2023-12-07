@@ -45,11 +45,11 @@ $namabis = mysqli_fetch_assoc($bis);
                 </tr>
                 <tr>
                     <td>Jam Kedatangan</td>
-                    <td><input type="text" name="jam_datang" class="form-control"></td>
+                    <td><input type="time" name="jam_datang" class="form-control"></td>
                 </tr>
                 <tr>
                     <td>Jam Keberangkatan</td>
-                    <td><input type="text" name="jam_berangkat" class="form-control"></td>
+                    <td><input type="time" name="jam_berangkat" class="form-control"></td>
                 </tr>
                 <tr>
                     <td></td>
